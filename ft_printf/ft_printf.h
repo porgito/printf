@@ -6,7 +6,7 @@
 /*   By: porg <porg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 16:24:30 by porg              #+#    #+#             */
-/*   Updated: 2021/11/17 16:23:24 by porg             ###   ########.fr       */
+/*   Updated: 2021/11/17 21:47:53 by porg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct	s_print
 
 //////////////////////////////////////
 
+void	ft_putptr(t_print *tab, unsigned long n);
 void	ft_putstr(t_print *tab, char const *str);
 void	*ft_itoa(t_print *tab, int n);
 void	ft_base(t_print *tab, unsigned int n, char c);

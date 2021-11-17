@@ -6,7 +6,7 @@
 /*   By: porg <porg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:46:42 by porg              #+#    #+#             */
-/*   Updated: 2021/11/17 16:40:20 by porg             ###   ########.fr       */
+/*   Updated: 2021/11/17 21:52:22 by porg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ static void	get_format(t_print *tab, const char *s, int i)
 		ft_putuns(tab, va_arg(tab->args, unsigned int));
 	if (s[i] == 'x' || s[i] == 'X')
 		ft_base(tab, va_arg(tab->args, unsigned int), s[i]);
+	if (s[i] == 'p')
+		ft_putptr(tab, va_arg(tab->args, unsigned long));
 	if (s[i] == '%')
 		ft_putchar(tab, '%');
 }
@@ -80,5 +82,7 @@ int	main()
 	char			s = '8';
 	unsigned int	testes = 123;
 	char			*str = "test";
-	ft_printf("salut, %u, %c, %s, %x, %X, %% \n", testes, s, str, testes, testes);
+	void			*ptr = str;
+	ft_printf("salut, %u, %c, %s, %x, %X, %%, %p \n", testes, s, str, testes, testes, ptr);
+	printf("%p", ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: porg <porg@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 15:42:11 by porg              #+#    #+#             */
-/*   Updated: 2021/11/17 16:19:45 by porg             ###   ########.fr       */
+/*   Updated: 2021/11/17 21:46:32 by porg             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,10 @@ void	ft_putbase(t_print *tab, unsigned int n, char *base)
 	if (n >= 16)
 		ft_putbase(tab, n / 16, base);
 	ft_putchar(tab, base[n % 16]);
+}
+
+void	ft_putptr(t_print *tab, unsigned long n)
+{
+	ft_putstr(tab, "0x");
+	ft_putbase(tab, n, "0123456789abcdef");
 }
